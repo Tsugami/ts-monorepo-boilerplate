@@ -9,6 +9,7 @@
     "prepare": "husky install",
     "postinstall": "husky install",
     "linter": "yarn workspace @monorepo/eslint-config",
+    "web": "yarn workspace @monorepo/web-nextjs",
     "run:eslint": "eslint --fix packages",
     "build": "yarn workspaces foreach -ptv run build",
     "dev": "yarn workspaces foreach -ptv run dev"

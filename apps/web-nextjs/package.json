@@ -1,5 +1,5 @@
 {
-  "name": "web-nextjs",
+  "name": "@monorepo/web-nextjs",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -16,7 +16,10 @@
   },
   "devDependencies": {
     "@types/react": "17.0.13",
+    "autoprefixer": "^10.2.6",
     "eslint": "7.29.0",
-    "eslint-config-next": "11.0.1"
+    "eslint-config-next": "11.0.1",
+    "postcss": "^8.3.5",
+    "tailwindcss": "^2.2.4"
   }
 }
