@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-monorepo",
+  "name": "monorepo",
   "private": true,
   "workspaces": [
     "packages/*"
@@ -7,8 +7,7 @@
   "scripts": {
     "prepare": "husky install",
     "postinstall": "husky install",
-    "linter": "yarn workspace @nextjs-monorepo/eslint-config",
-    "client-web": "yarn workspace @nextjs-monorepo/client-web",
+    "linter": "yarn workspace @nmonorepo/eslint-config",
     "run:eslint": "eslint --fix packages",
     "bootstrap": "lerna bootstrap --use-workspaces",
     "build": "lerna run build --stream",
@@ -17,11 +16,7 @@
   "devDependencies": {
     "@commitlint/cli": "^12.1.1",
     "@commitlint/config-conventional": "^12.1.1",
-    "@nextjs-monorepo/eslint-config": "*",
-    "@types/node": "^14.14.41",
-    "@types/react": "^17.0.3",
-    "@types/react-dom": "^17.0.3",
-    "@types/styled-components": "^5.1.9",
+    "@monorepo/eslint-config": "*",
     "eslint": "^7.24.0",
     "husky": "^6.0.0",
     "lerna": "^4.0.0",
@@ -29,9 +24,6 @@
     "prettier": "^2.2.1"
   },
   "dependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "styled-components": "^5.2.3",
     "typescript": "^4.2.4"
   }
 }
