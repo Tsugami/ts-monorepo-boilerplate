@@ -24,5 +24,10 @@
   },
   "dependencies": {
     "typescript": "^4.2.4"
+  },
+  "engines": {
+    "yarn": ">=1.22.0",
+    "node": ">=14",
+    "npm": "please-use-yarn"
   }
 }
