@@ -8,23 +8,35 @@
   "scripts": {
     "prepare": "husky install",
     "postinstall": "husky install",
-    "linter": "yarn workspace @monorepo/eslint-config",
-    "web": "yarn workspace @monorepo/web-nextjs",
+    "eslint-config-web": "yarn workspace @monorepo/eslint-config-web",
+    "web-next": "yarn workspace @monorepo/web-next",
     "run:eslint": "eslint --fix packages",
-    "build": "yarn workspaces foreach -ptv run build",
-    "dev": "yarn workspaces foreach -ptv run dev"
+    "all:build": "yarn workspaces foreach -ptv run build",
+    "all:dev": "yarn workspaces foreach -ptv run dev",
+    "delete:build": "find . -name \"build\" -exec rm -rf '{}' +",
+    "delete:node_modules": "find . -name \"node_modules\" -exec rm -rf '{}' +",
+    "delete:yarn-offline-cache": "find . -name \"yarn-offline-cache\" -exec rm -rf '{}' +",
+    "delete:yarn.lock": "find . -name \"yarn.lock\" -exec rm -rf '{}' +"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.1",
     "@commitlint/config-conventional": "^12.1.1",
-    "@monorepo/eslint-config": "*",
     "eslint": "^7.24.0",
     "husky": "^6.0.0",
     "lint-staged": "^10.5.4",
-    "prettier": "^2.2.1"
-  },
-  "dependencies": {
+    "prettier": "^2.2.1",
     "typescript": "^4.2.4"
+  },
+  "lint-staged": {
+    "*{.jsx,.js,.ts,tsx}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "*.yml": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "engines": {
     "yarn": ">=1.22.0",

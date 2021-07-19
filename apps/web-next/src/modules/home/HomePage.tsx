@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import { PROJECT_NAME } from '@lib/constants';
 
 export default function Home(): JSX.Element {
   return (
@@ -13,7 +14,7 @@ export default function Home(): JSX.Element {
         <h1 className='text-6xl font-bold'>
           Welcome to{' '}
           <a className='text-blue-600' href='https://nextjs.org'>
-            Next.js!
+            {PROJECT_NAME}
           </a>
         </h1>
 
